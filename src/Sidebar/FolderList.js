@@ -1,3 +1,24 @@
+import React from 'react'
+import { Link } from 'react-router-dom'
+import STORE from '../dummy-store.js'
+import './FolderList.css'
+
+export default function FolderList() {
+  return (
+    <div className='FolderList'>
+      <ul className='FolderListItems'>
+        {STORE.folders.map(folder => 
+          <li className='Folder'key={folder.id}>
+            <Link to={`/folder/${folder.id}`}>
+              {folder.name}
+            </Link>
+          </li>  
+        )}
+      </ul>
+      <button>Add Folder</button>
+      </div>
+  )
+}
 
 
 

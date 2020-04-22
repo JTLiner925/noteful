@@ -1,0 +1,36 @@
+.FolderList{
+  /* display: flex; */
+  flex-direction: column;
+  flex: 1;
+  font-size: 20px;
+}
+.FolderListItems{
+  margin-top: 20px;
+width: 100%;
+padding: 0;
+margin-bottom: 10px;
+}
+.Folder{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  list-style-type: none;
+  height: 60px;
+  border: 1px solid #000000;
+}
+.Folder a{
+  width: 100%;
+  text-decoration: none !important;
+}
+.Folder a:link, li a:visited, li a:hover, li a:active {
+  color: #000000;
+}
+.FolderList button{
+  display: flex;
+  justify-content: center;
+ align-content: center;
+  height: 50px;
+  width: 90%;
+  margin:0 5%;
+  font-size: 20px;
+}

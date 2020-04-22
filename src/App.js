@@ -1,16 +1,23 @@
 import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
-import "./App.css";
-
 import STORE from "./dummy-store";
-
+import FolderList from './Sidebar/FolderList';
+import Folder from './Sidebar/Folder';
+import NoteList from './MainSection/NoteList';
+// import Note from './MainSection/Note';
+import "./App.css";
 class App extends Component {
-
-  //create updateMain(){} - depending on the page it
-  //renders different content
-  //create updateSidebar(){}- depending on the page it
-  //renders different content
   
+  // create updateMain(){
+
+  // } 
+  //- depending on the page it
+  //renders different content
+  // create updateSidebar(){
+
+  // }
+  
+
   render() {
     return (
       <div className="App">
@@ -19,6 +26,23 @@ class App extends Component {
             <Link to="/">Noteful</Link>
           </h1>
         </header>
+        <main>
+          <Route path='/' 
+          // component={FolderList}
+          render={() =>
+          <FolderList />
+          }
+          />
+          <Route path='/' 
+          // component={NoteList}
+          render={() =>
+          <NoteList flexBasis={3} />
+          }
+          />
+          
+
+         
+        </main>
       </div>
     );
   }
