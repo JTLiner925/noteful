@@ -3,6 +3,7 @@ import { Route, Link } from "react-router-dom";
 import STORE from "./dummy-store";
 import FolderList from './Sidebar/FolderList';
 import Folder from './Sidebar/Folder';
+import FolderNotesList from './MainSection/FolderNotesList';
 import NoteList from './MainSection/NoteList';
 // import Note from './MainSection/Note';
 import "./App.css";
@@ -27,19 +28,24 @@ class App extends Component {
           </h1>
         </header>
         <main>
-          <Route path='/' 
+          <Route exact path='/' 
           // component={FolderList}
           render={() =>
+            <>
           <FolderList />
-          }
-          />
-          <Route path='/' 
-          // component={NoteList}
-          render={() =>
           <NoteList flexBasis={3} />
-          }
+          </>}
           />
-          
+          <Route path='/:folderId' 
+          render={() => 
+          <>
+          <FolderList 
+          path='/:folderId'/>
+          <FolderNotesList 
+          path='/:folderId'
+          flexBasis={3} />
+          </>}
+          />
 
          
         </main>
