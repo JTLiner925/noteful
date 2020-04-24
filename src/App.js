@@ -4,7 +4,6 @@ import STORE from "./dummy-store";
 import FolderList from './Sidebar/FolderList';
 import Folder from './Sidebar/Folder';
 import FolderNotesList from './MainSection/FolderNotesList';
-import NoteList from './MainSection/NoteList';
 // import Note from './MainSection/Note';
 import "./App.css";
 class App extends Component {
@@ -30,20 +29,23 @@ class App extends Component {
         <main>
           <Route exact path='/' 
           // component={FolderList}
-          render={() =>
+          render={(routeProps) =>
             <>
           <FolderList />
-          <NoteList flexBasis={3} />
+          <FolderNotesList flexBasis={3}
+          {...routeProps}
+          notes={STORE.notes} />
+          
           </>}
           />
-          <Route path='/:folderId' 
-          render={() => 
+          <Route path='/folder/:folderId' 
+          render={(routeProps) => 
           <>
-          <FolderList 
-          path='/:folderId'/>
+          <FolderList />
           <FolderNotesList 
-          path='/:folderId'
-          flexBasis={3} />
+          flexBasis={3} 
+          {...routeProps}
+          notes={STORE.notes}/>
           </>}
           />
 

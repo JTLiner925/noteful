@@ -1,22 +1,24 @@
 import React from "react";
 import STORE from "../dummy-store.js";
-import "./NoteList.css";
+// import "./NoteList.css";
+import Note from './Note';
 
 export default function FolderNotesList(props) {
   console.log(props)
-  const note = STORE.notes.find(n => n.folderId === props.match.params.folderId);
+  let { folderId }= props.match.params
+  console.log(folderId)
+  const notes = props.notes.filter(n => folderId ? n.folderId === folderId: n);
 
   // const newStyles = { flex: props.flexBasis }
   return (
     <div className="NoteList">
       <ul className="NoteListItems">
-        <li className="Note" key={note.id}>
-          <h3>{note.name}</h3>
-          <div className="note-basic">
-            <p>Date last modified on {note.modified.substring(0, 10)}</p>
-            <button className="deleteButton">Delete Note</button>
-          </div>
-        </li>
+        {notes.map(note =>
+          <Note 
+          key={note.id}
+          note ={note}
+          />
+        )}
       </ul>
       <button>Add Note</button>
     </div>

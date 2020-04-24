@@ -1,18 +1,14 @@
 import React from 'react'
 
-export default function Note() {
+export default function Note(props) {
   return (
-    <>
-      {STORE.notes.map(note =>
-          <li className='Note' key={note.id}>
-            <h3>{note.name}</h3>
+          <li className='Note'>
+            <h3>{props.note.name}</h3>
             <div className='note-basic'>
-            <p>Date last modified on {note.modified.substring(0,10)}</p>
+            <p>Date last modified on {props.note.modified.substring(0,10)}</p>
             <button className='deleteButton'>Delete Note</button>
             </div>
           </li>
-        )}
-    </>
   )
 }
 
