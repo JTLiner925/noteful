@@ -3,6 +3,7 @@
   flex-direction: column;
   flex: 1;
   font-size: 20px;
+  font-weight: bold;
 }
 .FolderListItems{
   margin-top: 20px;
@@ -22,8 +23,11 @@ margin-bottom: 10px;
   width: 100%;
   text-decoration: none !important;
 }
-.Folder a:link, li a:visited, li a:hover, li a:active {
+.Folder a:link, .Folder a:visited, .Folder a:active {
   color: #000000;
+}
+.Folder a:hover, .FolderList button:hover {
+  color: #4d75f8
 }
 .FolderList button{
   display: flex;
@@ -33,4 +37,5 @@ margin-bottom: 10px;
   width: 90%;
   margin:0 5%;
   font-size: 20px;
+  font-weight: bold;
 }

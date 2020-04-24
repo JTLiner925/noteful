@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Route, Link } from "react-router-dom";
 import STORE from "./dummy-store";
 import FolderList from './Sidebar/FolderList';
-import Folder from './Sidebar/Folder';
+import FolderPage from './Sidebar/FolderPage';
+import FolderNotePage from './MainSection/FolderNotePage';
 import FolderNotesList from './MainSection/FolderNotesList';
 // import Note from './MainSection/Note';
 import "./App.css";
@@ -46,6 +47,19 @@ class App extends Component {
           flexBasis={3} 
           {...routeProps}
           notes={STORE.notes}/>
+          </>}
+          />
+          <Route path='/note/:noteId'
+          render={(routeProps) =>
+          <>
+          <FolderPage 
+          {...routeProps}
+          folders={STORE.folders}/>
+          <FolderNotePage 
+          flexBasis={3} 
+          {...routeProps}
+          notes={STORE.notes}
+          folders={STORE.folders}/>
           </>}
           />
 
