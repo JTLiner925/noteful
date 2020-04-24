@@ -1,6 +1,6 @@
 import React from "react";
 import STORE from "../dummy-store.js";
-// import "./NoteList.css";
+import "./NoteList.css";
 import Note from './Note';
 
 export default function FolderNotesList(props) {
